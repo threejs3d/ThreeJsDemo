@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="initial-scale=1.0, viewport-fit=cover" />
+  <title>Kohler</title>
+</head>
+
+<body class="dark-theme">
+  <div class="experience">
+    <canvas class="experience-canvas"></canvas>
+  </div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-wrapper">
+      <div class="loading">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" asscroll-container>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <svg class="logo" width="112" height="24" viewBox="0 0 112 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M28.0764 0C21.6894 0 16.5272 5.13671 16.5272 11.4526C16.5272 17.782 21.7032 22.9051 28.0856 22.9051C34.4681 22.9051 39.6349 17.7639 39.6349 11.4435C39.6303 5.11864 34.4543 0 28.0764 0ZM33.28 11.439C33.28 14.5563 30.9499 17.0817 28.081 17.0817C25.2168 17.0862 22.882 14.5653 22.882 11.4435C22.8774 8.3353 25.2121 5.80986 28.0764 5.80986C30.9545 5.80534 33.28 8.33078 33.28 11.439ZM60.5966 22.607L60.5874 0.632489L66.7166 0.627971L66.7258 16.9823H73.5918V22.6024L60.5966 22.607ZM40.6572 22.616L40.6388 0.641524L46.7634 0.637007L46.768 8.34885L52.9386 8.33982L52.934 0.637007L59.0586 0.632489L59.0678 22.607H52.9478V14.4343L46.768 14.4433L46.7772 22.6115L40.6572 22.616ZM11.0012 11.1273L19.8382 0.655078H11.9038L6.11999 7.18997V0.655078L0 0.659596L0.00920992 22.6341H6.12459L6.11999 14.8002H6.1338L13.009 22.6341H21.1137L11.0012 11.1273ZM87.2685 0.614418L80.9782 0.627971H74.8398L74.8536 22.6024L81.0426 22.5979L87.3376 22.5934L87.3284 17.4341L81.1209 17.4386V14.091L86.7896 14.0774L86.785 9.16657H81.1025L81.1301 5.69692L87.2685 5.67885V0.614418ZM106.384 22.5934L100.006 13.8018C107.411 8.90453 103.123 0.596339 96.368 0.605375L88.6961 0.609893L88.7099 22.5798L94.701 22.5753V15.8438L99.6881 22.5934H106.384ZM98.5691 7.81575C98.5691 8.98585 97.5975 9.93459 96.4094 9.93459L94.6733 9.93007V5.70595L96.4002 5.70143C97.5975 5.70143 98.5691 6.64564 98.5691 7.81575ZM107.144 21.473C107.144 20.2442 108.138 19.2728 109.395 19.2728C110.653 19.2728 111.647 20.2442 111.647 21.4685C111.652 22.6928 110.657 23.6686 109.4 23.6686C108.138 23.6686 107.144 22.7018 107.144 21.473ZM111.302 21.4685C111.302 20.4384 110.418 19.6117 109.4 19.6117C108.373 19.6117 107.498 20.4384 107.498 21.473C107.498 22.5076 108.373 23.3298 109.409 23.3298C110.427 23.3253 111.302 22.5031 111.302 21.4685ZM110.054 22.6612H110.468L109.727 21.5543C110.16 21.5408 110.505 21.3691 110.505 20.8902C110.505 20.3707 110.072 20.2532 109.635 20.2532H108.557L108.562 22.6612H108.903V21.5498H109.317L110.054 22.6612ZM109.317 21.2155C109.352 21.2155 109.389 21.2162 109.428 21.217C109.741 21.223 110.16 21.2311 110.16 20.8857C110.155 20.6372 109.824 20.5965 109.557 20.5965H108.903V21.211C108.903 21.2155 109.317 21.2155 109.317 21.2155Z"
+            fill="white" />
+
+        </svg>
+      </div>
+      <div class="navbar-middle">
+        <a class="item">Comfort</a>
+        <a class="item">Purity</a>
+        <a class="item">Control</a>
+        <a class="item">ExPerience</a>
+      </div>
+      <div class="navbar-right">
+        <div class="toggle-bar">
+          <!-- <div class="sun-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M12 15q1.25 0 2.125-.875T15 12q0-1.25-.875-2.125T12 9q-1.25 0-2.125.875T9 12q0 1.25.875 2.125T12 15Zm0 2q-2.075 0-3.537-1.463Q7 14.075 7 12t1.463-3.538Q9.925 7 12 7t3.538 1.462Q17 9.925 17 12q0 2.075-1.462 3.537Q14.075 17 12 17ZM2 13q-.425 0-.712-.288Q1 12.425 1 12t.288-.713Q1.575 11 2 11h2q.425 0 .713.287Q5 11.575 5 12t-.287.712Q4.425 13 4 13Zm18 0q-.425 0-.712-.288Q19 12.425 19 12t.288-.713Q19.575 11 20 11h2q.425 0 .712.287.288.288.288.713t-.288.712Q22.425 13 22 13Zm-8-8q-.425 0-.712-.288Q11 4.425 11 4V2q0-.425.288-.713Q11.575 1 12 1t.713.287Q13 1.575 13 2v2q0 .425-.287.712Q12.425 5 12 5Zm0 18q-.425 0-.712-.288Q11 22.425 11 22v-2q0-.425.288-.712Q11.575 19 12 19t.713.288Q13 19.575 13 20v2q0 .425-.287.712Q12.425 23 12 23ZM5.65 7.05 4.575 6q-.3-.275-.288-.7.013-.425.288-.725.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7 0 .4-.275.7-.275.3-.687.287-.413-.012-.713-.287ZM18 19.425l-1.05-1.075q-.275-.3-.275-.712 0-.413.275-.688.275-.3.688-.287.412.012.712.287L19.425 18q.3.275.288.7-.013.425-.288.725-.3.3-.725.3t-.7-.3ZM16.95 7.05q-.3-.275-.287-.688.012-.412.287-.712L18 4.575q.275-.3.7-.288.425.013.725.288.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275-.4 0-.7-.275ZM4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.713-.275.412 0 .687.275.3.275.288.688-.013.412-.288.712L6 19.425q-.275.3-.7.287-.425-.012-.725-.287ZM12 12Z"/></svg>
+            </div>
+            <button class="toggle-button">
+              <div class="toggle-circle"></div>
+            </button>
+            <div class="moon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025.337.025.662.075-1.025.725-1.637 1.887Q11.1 6.15 11.1 7.5q0 2.25 1.575 3.825Q14.25 12.9 16.5 12.9q1.375 0 2.525-.613 1.15-.612 1.875-1.637.05.325.075.662Q21 11.65 21 12q0 3.75-2.625 6.375T12 21Zm0-2q2.2 0 3.95-1.212 1.75-1.213 2.55-3.163-.5.125-1 .2-.5.075-1 .075-3.075 0-5.238-2.162Q9.1 10.575 9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.162 2.55Q5 9.8 5 12q0 2.9 2.05 4.95Q9.1 19 12 19Zm-.25-6.75Z"/></svg>
+            </div> -->
+          <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <rect width="32" height="4" rx="2" fill="#D9D9D9" />
+
+            <rect y="8" width="32" height="4" rx="2" fill="#D9D9D9" />
+
+            <rect y="16" width="32" height="4" rx="2" fill="#D9D9D9" />
+
+          </svg>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-wrapper" asscroll>
+
+      <!-- Hero Section -->
+
+      <section class="hero">
+        <div class="hero-wrapper">
+
+          <!-- Intro -->
+
+          <!-- <div class="arrow-svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z"/></svg>
+            </div> -->
+
+          <!-- <div class="hero-main">
+              <h1 class="hero-main-title">Numi-toilet</h1>
+              <p class="hero-main-description">smart toilet animation</p>
+            </div> -->
+          <div class="numi">
+            NUMI 2.0
+          </div>
+          <div class="elevate">
+            Elevate your daily routine. Elegant design, cutting-edge convenience and effortless control.
+          </div>
+          <div class="ultimate">
+            The ultimate bathroom upgrade.
+          </div>
+
+          <!-- <div class="hero-second">
+              <p class="hero-second-subheading first-sub">Limited Edition</p>
+              <p class="hero-second-subheading second-sub">• 100</p>
+            </div> -->
+        </div>
+      </section>
+
+      <!-- First Section -->
+
+      <div class="first-move section-margin"></div>
+
+      <!-- <section class="first-section section left">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="section-intro-wrapper">
+          <h2 class="section-title">
+            <span class="section-title-text">Cockpit</span>
+          </h2>
+          <span class="section-number">01</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <img class="section-image" src="/images/cockpit.jpeg" alt="Cockpit picture">
+          <h3 class="section-heading">A pro-level cockpit</h3>
+          <p class="section-text">This cockpit features thicker walls in key positions for extra strength and stability
+            where it matters most. You can adjust the fit quickly, easily, and precisely, thanks to height and width
+            adjustment without using spacers or cutting the steerer tube.</p>
+          <h3 class="section-heading">Vitesse VTS022 Aerocockpit</h3>
+          <p class="section-text">Now with reinforced carbon walls for added stiffness and improved durability, this is
+            the latest generation of aerodynamically optimised, Vitesse-developed WorldTour-level cockpits. With
+            complete cable and wire integration, get super-clean optics and reduced drag at the same time. And with
+            single-tool adjustable height and width, big spacer stacks are a thing of the past.</p>
+          <h3 class="section-heading">Vitesse Ergospeed Gel</h3>
+          <p class="section-text">Bar tape with EVA foam and elastomer gel mix for optimal comfort</p>
+        </div>
+      </section> -->
+
+      <!-- Second Section -->
+
+      <div class="second-move section-margin"></div>
+
+      <!-- <section class="second-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <h2 class="section-title">
+              <span class="section-title-text">Drivetrain</span>
+            </h2>
+            <span class="section-number">02</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <img class="section-image" src="/images/drivetrain.jpeg" alt="Drivetain picture">
+            <h3 class="section-heading">SRAM Force AXS Powermeter</h3>
+            <p class="section-text">When only the very highest levels of performance will do, then you need a power meter. This model is seamlessly integrated in the crank and connects wirelessly with all common GPS units and SRAM’s AXS system, so you can measure your training and racing efforts in real time with pinpoint accuracy.</p>
+            <h3 class="section-heading">Pedals</h3>
+            <p class="section-text">The PD-V8000 pedals from Vitesse combine the two most desired qualities for road cyclists: stiffness and light weight. With a carbon-composite body, an extra-wide platform and a reduced stack height, you get the power transfer you’ve always dreamed about. Perfect for racers!</p>
+            <h3 class="section-heading">Chain</h3>
+            <p class="section-text">SRAM FORCE D1 12-speed with signature flat-top design for quieter operation, increased strength and durability. Hard chrome plated inner link plates and rollers for reduced wear.</p>
+          </div>
+        </section> -->
+
+      <!-- Third Section -->
+
+      <div class="third-move section-margin"></div>
+
+      <!-- <section class="third-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <h2 class="section-title">
+              <span class="section-title-text">Seat</span>
+            </h2>
+            <span class="section-number">03</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <img class="section-image" src="/images/bike.jpeg" alt="Bike picture">
+            <h3 class="section-heading">Selle Italia SLR Boost Superflow S</h3>
+            <p class="section-text">Saddle with modern short-nose design and unisex ergonomics.</p>
+            <h3 class="section-heading">Vitesse SP0046 Aero Seatpost</h3>
+            <p class="section-text">This lightweight Vitesse-developed carbon seatpost now features a new sleeve bearing that creates a seal and reduces seatpost and seat tube friction and prevents dirt from entering. It’s lightweight and also gives you extra aero gains, thanks to its aerodynamically optimised tube profile. The new, lower mounted clamping mechanism and unique double-chamber design increase comfort, and we combine it with a Selle Italia saddle, for incredible performance.</p>
+          </div>
+        </section> -->
+
+      <!-- Fourth Section -->
+
+      <div class="fourth-move section-margin"></div>
+
+      <!-- <section class="fourth-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <h2 class="section-title">
+              <span class="section-title-text">About This Project</span>
+            </h2>
+            <span class="section-number">04</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">The Goal</h3>
+            <p class="section-text">This fictive project was created to showcase my current skills using Three.js and GSAP. <br>
+              Last update: 23 Aug 2022</p>
+            <h3 class="section-heading">Special Thanks to:</h3>
+            <ul>
+              <li class="section-text">Andrew Woan for all your help and your amazing <a href="https://www.youtube.com/watch?v=rxTb9ys834w&t=9266s">tutorial</a> inspired by <a href="https://bokoko33.me/">Bokoko33's portfolio</a>.</li>
+              <li class="section-text">Bruno Simon for all the knowledge I've learned with <a href="https://threejs-journey.com/">Three.js Journey</a></li>
+              <li class="section-text">And to all the people from the Three.js Journey's discord who helped me</li>
+            </ul>
+            <h3 class="section-heading">Credits:</h3>
+            <ul>
+              <li class="section-text">Bike model by <a href="https://market.pmnd.rs/model/bike">market.pmnd.rs</a></li>
+              <li class="section-text">Photos by <a href="https=unsplash&utm_medium=referral&utm_content=creditCopyText">Josh Nuttall</a>
+              </li>
+            </ul>
+          </div>
+
+          <footer>
+            <div>© 2022 - <a class="footer-link" href="https://kiril.ch">kiril.ch</a></div>
+            <div class="socials">
+              <a class="footer-link" href="https://github.com/Kirilbt/bike-demo-threejs">github</a>
+              <a class="footer-link" href="https://twitter.com/kirilbt">twitter</a>
+              <a class="footer-link" href="https://www.linkedin.com/in/kiriltucker/">linkedin</a>
+            </div>
+          </footer>
+        </section> -->
+    </div>
+
+    <!-- Debug -->
+    <div class="debug"></div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
