@@ -126,19 +126,19 @@ export default class Controls {
           //z: 0.5419247327,
         }, 'same')
         .fromTo(this.camera.perspectiveCamera.position, {
-          x: -1.259,
+          x: -1.289,
           y: 0.54,
           z: 0.005
         },
         {
           x: () => {
             if(this.sizes.width > 1300 && this.sizes.height < 1000) {
-              return -1.259
+              return -4.659
             } else {
-              return -1.259
+              return -.659
             }
           },
-          y: 0,
+          y: 0.8,
         }, 'same')
         .fromTo(this.camera.perspectiveCamera.rotation, {
           x: -1.559800753,
@@ -152,7 +152,7 @@ export default class Controls {
           
         }, 'same')
         .to(this.zoom, {
-          zoomValue: 0.5,
+          zoomValue: 1.5,
           onUpdate: () => {
             this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
             this.camera.perspectiveCamera.updateProjectionMatrix()
@@ -170,11 +170,11 @@ export default class Controls {
           },
         })
         .to(this.actualBike.rotation, {
-          y: 0.0001,
+          y: 0.01,
         }, 'same')
         .to(this.camera.perspectiveCamera.position, {
           x: -3,
-          y: 0.379,
+          y: 0.579,
           z: 0.838,
         }, 'same')
         // .to(this.camera.perspectiveCamera.rotation, {
