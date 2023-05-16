@@ -131,14 +131,9 @@ export default class Controls {
           z: 0.005
         },
         {
-          x: () => {
-            if(this.sizes.width > 1300 && this.sizes.height < 1000) {
-              return -4.659
-            } else {
-              return -.659
-            }
-          },
-          y: 0.8,
+          x: -5,
+          y: 1,
+          z: -0.8
         }, 'same')
         .fromTo(this.camera.perspectiveCamera.rotation, {
           x: -1.559800753,
@@ -152,7 +147,7 @@ export default class Controls {
           
         }, 'same')
         .to(this.zoom, {
-          zoomValue: 1.5,
+          zoomValue: 2.5,
           onUpdate: () => {
             this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
             this.camera.perspectiveCamera.updateProjectionMatrix()
@@ -170,12 +165,12 @@ export default class Controls {
           },
         })
         .to(this.actualBike.rotation, {
-          y: 0.01,
+          y: -0.0000001,
         }, 'same')
         .to(this.camera.perspectiveCamera.position, {
-          x: -3,
-          y: 0.579,
-          z: 0.838,
+          x: -5,
+          y: 0.979,
+          z: 0.98,
         }, 'same')
         // .to(this.camera.perspectiveCamera.rotation, {
         //   x: -0.5614724204,
@@ -183,7 +178,7 @@ export default class Controls {
         //   z: 0.4373795105,
         // }, 'same')
         .to(this.zoom, {
-          zoomValue: 1,
+          zoomValue: 2.2,
           onUpdate: () => {
             this.camera.perspectiveCamera.zoom = this.zoom.zoomValue;
             this.camera.perspectiveCamera.updateProjectionMatrix();
@@ -205,8 +200,8 @@ export default class Controls {
         }, 'same')
         .to(this.camera.perspectiveCamera.position, {
           x: -10,
-          y: 1.75,
-          z: 0.145
+          y: 2.0,
+          z: 0.001
         }, 'same')
         // .to(this.camera.perspectiveCamera.rotation, {
         //   x: -0.6639232475,
@@ -214,7 +209,7 @@ export default class Controls {
         //   z: -0.0715584993,
         // }, 'same')
         .to(this.zoom, {
-          zoomValue: 8.5,
+          zoomValue: 11.5,
           onUpdate: () => {
             this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
             this.camera.perspectiveCamera.updateProjectionMatrix()
@@ -251,7 +246,7 @@ export default class Controls {
         //   z: 0.008251344278639
         // }, 'same')
         .to(this.zoom, {
-          zoomValue: 6,
+          zoomValue: 4,
           onUpdate: () => {
             this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
             this.camera.perspectiveCamera.updateProjectionMatrix()
