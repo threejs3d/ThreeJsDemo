@@ -204,12 +204,12 @@ export default class Controls {
           z: 0.001
         }, 'same')
         // .to(this.camera.perspectiveCamera.rotation, {
-        //   x: -0.6639232475,
-        //   y: -0.0918043187,
-        //   z: -0.0715584993,
+        //   x: -0.7881906902,
+        //   y:  -0.0125663706,
+        //   z: -0.0125663706,
         // }, 'same')
         .to(this.zoom, {
-          zoomValue: 11.5,
+          zoomValue: 6.5,
           onUpdate: () => {
             this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
             this.camera.perspectiveCamera.updateProjectionMatrix()
@@ -252,6 +252,44 @@ export default class Controls {
             this.camera.perspectiveCamera.updateProjectionMatrix()
           },
         }, 'same')
+
+
+        // // Fifth Section
+        // this.fifthMoveTimeline = new GSAP.timeline({
+        //   scrollTrigger: {
+        //       trigger: '.fifth-move',
+        //       start: 'top top',
+        //       end: 'bottom bottom',
+        //       scrub: 0.6,
+        //       invalidateOnRefresh: true
+        //   }
+        // })
+        // .to(this.actualBike.rotation, {
+        //   y: -3.1,
+        // }, 'same')
+        // // .to(this.camera.perspectiveCamera.position, {
+        // //   x: () => {
+        // //     if(this.sizes.width > 1300  && this.sizes.height < 1000) {
+        // //       return 2.2
+        // //     } else {
+        // //       return 2
+        // //     }
+        // //   },
+        // //   y: 1,
+        // //   z: 4,
+        // // }, 'same')
+        // // .to(this.camera.perspectiveCamera.rotation, {
+        // //   x: -0.02845135092188762,
+        // //   y: 0.29416856071633857,
+        // //   z: 0.008251344278639
+        // // }, 'same')
+        // .to(this.zoom, {
+        //   zoomValue: 4,
+        //   onUpdate: () => {
+        //     this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
+        //     this.camera.perspectiveCamera.updateProjectionMatrix()
+        //   },
+        // }, 'same')
       },
 
       // Mobile
@@ -358,7 +396,7 @@ export default class Controls {
           z: -0.17595910659449646,
         }, 'same')
         .to(this.zoom, {
-          zoomValue: 3.5,
+          zoomValue: 0.5,
           onUpdate: () => {
             this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
             this.camera.perspectiveCamera.updateProjectionMatrix()
@@ -384,7 +422,7 @@ export default class Controls {
           y: 0.5,
         }, 'same')
         .to(this.zoom, {
-          zoomValue: 1.5,
+          zoomValue: 1,
           onUpdate: () => {
               this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
               this.camera.perspectiveCamera.updateProjectionMatrix()
