@@ -540,12 +540,21 @@ footer {
 
 .navbar-middle{
   border: 1px solid white;
-  border-radius: 1px;
+  border-radius: 10px;
+  padding: 2px;
 }
 
 
 .navbar-middle .item{
-   padding-right: 5px ;
+padding: 10px;
+font-family: 'Helvetica Neue';
+
+font-style: medium;
+
+font-size: 20px;
+
+color: #FFFFFF;
+
 }
 
 .numi {
@@ -653,4 +662,67 @@ footer {
 
 
 
+}
+
+.first-section {
+  width: 439px;
+}
+.second-section{
+  width: 500px;
+ margin-left: 921px;
+}
+
+.upgrade {
+  font-family: Nohemi;
+  font-style: Regular;
+  font-size: 64px;
+  line-height: 72px;
+  background: linear-gradient(90.04deg, #D87FB4 -1.85%, #B1B8F7 99.25%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px;
+}
+
+.svg-elevate {
+  display: flex;
+}
+
+.svg-Cutting {
+  display: flex;
+  max-width: 350px;
+}
+
+.left-arrow {
+  padding: 10px;
+}
+
+.Elevate {
+  padding: 10px;
+  font-family: Helvetica;
+  font-style: Regular;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.Cutting {
+  padding: 10px;
+  font-family: Helvetica;
+  font-style: Regular;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+.watchit{
+  padding: 10px;
+  font-family: Helvetica;
+  font-style: Regular;
+  font-size: 20px;
+  color: #FFFFFF;
+  border: 1px solid white;
+  border-radius: 10px;
+  max-width: 170px;
+  text-align: center;
+}
+
+.section-margin{
+  color: #FFFFFF;
 }
