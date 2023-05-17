@@ -100,8 +100,10 @@ export default class Controls {
   }
 
   setScrollTrigger() {
+    console.log(this.actualBike);
     ScrollTrigger.matchMedia({
       // Desktop
+     
       '(min-width: 969px)': () => {
 
         // Resets
@@ -165,11 +167,11 @@ export default class Controls {
           },
         })
         .to(this.actualBike.rotation, {
-          y: -0.0000001,
+          y: -0.01,
         }, 'same')
         .to(this.camera.perspectiveCamera.position, {
           x: -5,
-          y: 0.979,
+          y:1,
           z: 0.98,
         }, 'same')
         // .to(this.camera.perspectiveCamera.rotation, {
@@ -229,24 +231,18 @@ export default class Controls {
         .to(this.actualBike.rotation, {
           y: -3.1,
         }, 'same')
-        // .to(this.camera.perspectiveCamera.position, {
-        //   x: () => {
-        //     if(this.sizes.width > 1300  && this.sizes.height < 1000) {
-        //       return 2.2
-        //     } else {
-        //       return 2
-        //     }
-        //   },
-        //   y: 1,
-        //   z: 4,
-        // }, 'same')
+        .to(this.camera.perspectiveCamera.position, {
+          x: -10,
+          y: 1.6,
+          z: 0.01,
+        }, 'same')
         // .to(this.camera.perspectiveCamera.rotation, {
         //   x: -0.02845135092188762,
         //   y: 0.29416856071633857,
         //   z: 0.008251344278639
         // }, 'same')
         .to(this.zoom, {
-          zoomValue: 4,
+          zoomValue: 4.3,
           onUpdate: () => {
             this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
             this.camera.perspectiveCamera.updateProjectionMatrix()
