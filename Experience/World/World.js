@@ -5,7 +5,6 @@ import { EventEmitter } from 'events'
 
 import Environment from './Environment.js'
 import Bike from './Bike.js'
-import Floor from './Floor.js'
 // import Controls from '../Controls.js'
 
 
@@ -21,7 +20,6 @@ export default class World extends EventEmitter {
 
     this.resources.on('ready', () => {
       this.environment = new Environment()
-      this.floor = new Floor()
       this.bike = new Bike()
       // this.controls = new Controls()
       this.emit('worldready')

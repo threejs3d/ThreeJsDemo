@@ -3,6 +3,8 @@ import { DirectionalLightHelper } from 'three'
 import GSAP from 'gsap'
 import Experience from '../Experience.js'
 
+
+var bgTexture;
 export default class Environment {
   constructor() {
     this.experience = new Experience()
@@ -17,9 +19,22 @@ export default class Environment {
         colorObj: {r:0 , g: 0, b: 0}
       }
     }
+// Back ground imgae setting
+    const loader = new THREE.TextureLoader();
+    bgTexture = loader.load('./Background.svg' ,
+    function(texture) {
+    // Resize image to fit in window
+    // Code from https://stackoverflow.com/a/48126806/4570472
+    // var img = texture.image;
+    // var bgWidth = img.width;
+    // var bgHeight = img.height;
+    // resize();
+    });
+    
+    this.scene.background = bgTexture;
 
     // Setup
-    this.setBackground()
+//this.setBackground()
     this.setLights()
     this.setEnvironmentMap()
   }
