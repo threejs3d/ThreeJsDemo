@@ -9,7 +9,7 @@ export default class Resources extends EventEmitter {
     super()
     this.experience = new Experience()
     this.renderer = this.experience.renderer
-
+    this.clock = new THREE.Clock();
     this.assets = assets
 
     this.items = {}
@@ -68,9 +68,9 @@ export default class Resources extends EventEmitter {
   }
 
   update() {
-    //var delta = clock.getDelta();
+    var delta = this.clock.getDelta();
   
-   this.mixer.update( 0.05 );
+    if ( this.mixer ) this.mixer.update( 0.05 );
 
   }
 }
