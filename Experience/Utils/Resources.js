@@ -5,7 +5,7 @@ import { EventEmitter } from 'events'
 import Experience from "../Experience.js"
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js'
 import GSAP from 'gsap'
-
+var mixer;
 export default class Resources extends EventEmitter {
   constructor(assets) {
     super()
@@ -19,6 +19,8 @@ export default class Resources extends EventEmitter {
     this.queue = this.assets.length
     this.loaded = 0
     this.mixer;
+    this.action;
+    this.file;
     GSAP.registerPlugin(ScrollTrigger)
     this.setLoaders()
     this.startLoading()
@@ -41,8 +43,8 @@ export default class Resources extends EventEmitter {
           console.log(file)
           this.singleAssetLoaded(asset, file)
           console.log(file) 
-          this.mixer = new THREE.AnimationMixer( file.scene );
-          this.action = this.mixer.clipAction( file.animations[0])
+          mixer = new THREE.AnimationMixer( file.scene );
+          this.action = mixer.clipAction( file.animations[0])
           this.createAnimation(this.mixer, this.action, file.animations[0]);            
           this.action.play();         
         })
@@ -64,45 +66,42 @@ export default class Resources extends EventEmitter {
   }
 
   update() {
-    var delta = this.clock.getDelta();
+    //var delta = this.clock.getDelta();
+    //this.mixer.update(0.01);
   
-    if ( this.mixer )
+    if ( mixer )
     { 
-      //this.createAnimation(this.mixer, this.action, file.animations[0]);     
-      this.mixer.update( 0.01 )
-    };
+      //this.createAnimation(this.mixer, this.action, file.animations[0]);  
+    //   let proxy = {
 
-  }
+    //     get time() {
 
+    //        console.log(mixer)
+    //         return 1.25;
 
-  createAnimation(mixer, action, clip) {
+    //     },
 
-    let proxy = {
+    //     set time(value) {
 
-        get time() {
+    //         this.action.paused = false;
+    //         //this.mixer.update( 0.05 );
 
-            return mixer.time;
+    //         this.mixer.setTime(value);
 
-        },
+    //         this.action.paused = true;
 
-        set time(value) {
+    //         //this.mixer.update(0.05)
 
-            action.paused = false;
-            this.mixer.update( 0.05 );
+    //     }
 
-            mixer.setTime(value);
-
-            action.paused = true;
-
-        }
-
-    };
+    // };
 
     let scrollingTL = new GSAP.timeline({
         
         scrollTrigger: {
 
-            trigger: ".third-move",
+            trigger: ".second-move",
+            endTrigger: '.third-move',
 
             start: "top top",
 
@@ -110,23 +109,125 @@ export default class Resources extends EventEmitter {
 
             //pin: true,
 
-            scrub: true,
+            //scrub: true,
             //invalidateOnRefresh: true,
             onUpdate: function () {
               console.log("hello");
-              //this.update();
+              //this.action.play();
+              mixer.update(0.00001)
+
+              
+              
             }
 
         }
 
-    })
+    }) .to(document.getElementById(".second"), {
+      onUpdate: () => {
+        //this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
+        //this.camera.perspectiveCamera.updateProjectionMatrix()
+      }
+    }, 'same')
 
-        .to(proxy, {
+        // .to(proxy, {
 
-            time: clip.duration,
+        //     time: 1.25,
             
 
-        })
+        // })
+
+
+        let scrollingNon = new GSAP.timeline({
+        
+          scrollTrigger: {
+  
+              trigger: ".first-move",
+              //endTrigger: '.second-move',
+  
+              start: "top top",
+  
+              end: "bottom bottom",
+  
+              //pin: true,
+  
+              //scrub: true,
+              //invalidateOnRefresh: true,
+              onUpdate: function () {
+                console.log("hello");
+                //this.action.play();
+                //mixer.update(0.00001)
+  
+                
+                
+              }
+  
+          }
+  
+      }) .to(document.getElementById(".first"), {
+        onUpdate: () => {
+          //this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
+          //this.camera.perspectiveCamera.updateProjectionMatrix()
+        }
+      }, 'same')
+   
+      
+    };
+
+  }
+
+
+  createAnimation(mixer, action, clip) {
+
+    // let proxy = {
+
+    //     get time() {
+
+    //         return mixer.time;
+
+    //     },
+
+    //     set time(value) {
+
+    //         action.paused = false;
+    //         //this.mixer.update( 0.05 );
+
+    //         mixer.setTime(value);
+
+    //         action.paused = true;
+
+    //     }
+
+    // };
+
+    // let scrollingTL = new GSAP.timeline({
+        
+    //     scrollTrigger: {
+
+    //         trigger: ".third-move",
+
+    //         start: "top top",
+
+    //         end: "bottom bottom",
+
+    //         //pin: true,
+
+    //         scrub: true,
+    //         //invalidateOnRefresh: true,
+    //         onUpdate: function () {
+    //           console.log("hello");
+    //           mixer.update(0.01);
+    //         }
+
+    //     }
+
+    // })
+
+    //     .to(proxy, {
+
+    //         time: clip.duration,
+            
+
+    //     })
 
 }
 }
