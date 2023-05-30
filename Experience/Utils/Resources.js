@@ -44,9 +44,10 @@ export default class Resources extends EventEmitter {
           this.singleAssetLoaded(asset, file)
           console.log(file) 
           mixer = new THREE.AnimationMixer( file.scene );
-          this.action = mixer.clipAction( file.animations[0])
-          this.createAnimation(this.mixer, this.action, file.animations[0]);            
-          this.action.play();         
+          this.action = mixer.clipAction( file.animations[0]) 
+          this.bidgetAction = mixer.clipAction( file.animations[1])         
+          this.action.play();  
+          this.bidgetAction.play();       
         })
       } else if (asset.type === 'cubeTexture') {
         this.loaders.cubeTextureLoader.load(asset.path, (file => {
@@ -99,33 +100,18 @@ export default class Resources extends EventEmitter {
     let scrollingTL = new GSAP.timeline({
         
         scrollTrigger: {
-
             trigger: ".second-move",
             endTrigger: '.third-move',
-
             start: "top top",
-
             end: "bottom bottom",
-
-            //pin: true,
-
-            //scrub: true,
-            //invalidateOnRefresh: true,
             onUpdate: function () {
-              console.log("hello");
-              //this.action.play();
-              mixer.update(0.00001)
-
-              
-              
+              mixer.update(0.00001) 
             }
 
         }
 
     }) .to(document.getElementById(".second"), {
       onUpdate: () => {
-        //this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
-        //this.camera.perspectiveCamera.updateProjectionMatrix()
       }
     }, 'same')
 
@@ -174,60 +160,4 @@ export default class Resources extends EventEmitter {
     };
 
   }
-
-
-  createAnimation(mixer, action, clip) {
-
-    // let proxy = {
-
-    //     get time() {
-
-    //         return mixer.time;
-
-    //     },
-
-    //     set time(value) {
-
-    //         action.paused = false;
-    //         //this.mixer.update( 0.05 );
-
-    //         mixer.setTime(value);
-
-    //         action.paused = true;
-
-    //     }
-
-    // };
-
-    // let scrollingTL = new GSAP.timeline({
-        
-    //     scrollTrigger: {
-
-    //         trigger: ".third-move",
-
-    //         start: "top top",
-
-    //         end: "bottom bottom",
-
-    //         //pin: true,
-
-    //         scrub: true,
-    //         //invalidateOnRefresh: true,
-    //         onUpdate: function () {
-    //           console.log("hello");
-    //           mixer.update(0.01);
-    //         }
-
-    //     }
-
-    // })
-
-    //     .to(proxy, {
-
-    //         time: clip.duration,
-            
-
-    //     })
-
-}
 }
