@@ -754,3 +754,23 @@ color: #FFFFFF;
   color: #FFFFFF;
 }
 
+ul{
+  width:100%;
+	position: fixed;
+	z-index: 999999;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  }
+  ul li{
+    padding: 10px;
+  }
+  ul li a{
+    color:#fff;
+    text-decoration: none;
+    border-top: 2px solid rgba(0,0,0,0);
+    
+  }
+  .active a {
+    border-color: skyblue;
+  }
