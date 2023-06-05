@@ -116,7 +116,12 @@ export default class Controls {
             start: 'top top',
             end: 'bottom bottom',
             scrub: 1,
-            invalidateOnRefresh: true
+            invalidateOnRefresh: true,
+            onUpdate: function () {
+              $("#demo").addClass("active");
+              $("#demo").siblings().removeClass('active');
+
+            }
           }
         })
         .fromTo(this.actualBike.rotation, {
@@ -164,6 +169,10 @@ export default class Controls {
             end: 'bottom bottom',
             scrub: 1,
             invalidateOnRefresh: true,
+            onUpdate: function () {
+              $("#demo1").addClass("active");
+              $("#demo1").siblings().removeClass('active');
+              }
           },
         })
         .to(this.actualBike.rotation, {
@@ -194,7 +203,12 @@ export default class Controls {
             start: 'top top',
             end: 'bottom bottom',
             scrub: 0.6,
-            invalidateOnRefresh: true
+            invalidateOnRefresh: true,
+            onUpdate: function () {
+              $("#demo2").addClass("active");
+              $("#demo2").siblings().removeClass('active');
+              
+              }
           },
         })
         .to(this.actualBike.rotation, {
@@ -225,7 +239,11 @@ export default class Controls {
               start: 'top top',
               end: 'bottom bottom',
               scrub: 0.6,
-              invalidateOnRefresh: true
+              invalidateOnRefresh: true,
+              onUpdate: function () {
+                $("#demo3").addClass("active");
+                $("#demo3").siblings().removeClass('active');
+                }
           }
         })
         .to(this.actualBike.rotation, {

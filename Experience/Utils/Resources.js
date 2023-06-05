@@ -139,7 +139,7 @@ export default class Resources extends EventEmitter {
               //scrub: true,
               //invalidateOnRefresh: true,
               onUpdate: function () {
-                console.log("hello");
+                // console.log("hello");
                 //this.action.play();
                 //mixer.update(0.00001)
   
