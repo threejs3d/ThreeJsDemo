@@ -267,6 +267,78 @@ export default class Controls {
           },
         }, 'same')
 
+        // Five Section
+        this.fourthMoveTimeline = new GSAP.timeline({
+          scrollTrigger: {
+              trigger: '.fifth-move',
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: 0.6,
+              invalidateOnRefresh: true,
+              onUpdate: function () {
+                $("#demo3").addClass("active");
+                $("#demo3").siblings().removeClass('active');
+                // $(".experience-canvas").hide();
+              
+                }
+          }
+        })
+        .to('.experience-canvas', { opacity: 1, duration: 0.5 })
+        .to('.experience-canvas', { opacity: 0, duration: 0.5 }
+            )
+        .to(this.actualBike.rotation, {
+          y: -3.1,
+        }, 'same')
+        .to(this.camera.perspectiveCamera.position, {
+          x: -10,
+          y: 1.6,
+          z: 0.01,
+        }, 'same')
+        .to(this.zoom, {
+          zoomValue: 4.3,
+          onUpdate: () => {
+            this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
+            this.camera.perspectiveCamera.updateProjectionMatrix()
+          },
+        }, 'same')
+
+
+
+         // six Section
+         this.fourthMoveTimeline = new GSAP.timeline({
+          scrollTrigger: {
+              trigger: '.six-move',
+              start: 'top center',
+              end: 'center center',
+              scrub: 0.6,
+              invalidateOnRefresh: true,
+              onUpdate: function () {
+                $("#demo3").addClass("active");
+                $("#demo3").siblings().removeClass('active');
+                // $(".experience-canvas").hide();
+              
+                }
+          }
+        })
+        .to('.fifth-section', { opacity: 1, duration: 0.5 })
+        // .to('.fifth-section', { opacity: 1, duration: 0.1 }
+        //     )
+        .to(this.actualBike.rotation, {
+          y: -3.1,
+        }, 'same')
+        .to(this.camera.perspectiveCamera.position, {
+          x: -10,
+          y: 1.6,
+          z: 0.01,
+        }, 'same')
+        .to(this.zoom, {
+          zoomValue: 4.3,
+          onUpdate: () => {
+            this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
+            this.camera.perspectiveCamera.updateProjectionMatrix()
+          },
+        }, 'same')
+
 
         // // Fifth Section
         // this.fifthMoveTimeline = new GSAP.timeline({

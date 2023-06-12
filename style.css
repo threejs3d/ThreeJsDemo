@@ -774,3 +774,10 @@ ul{
   .active a {
     border-color: skyblue;
   }
+ img{
+  display: block;
+  margin: auto;
+ }
+ .fifth-section{
+  opacity: 0 ;
+ }
