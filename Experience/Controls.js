@@ -29,6 +29,7 @@ export default class Controls {
     this.setScrollTrigger()
   }
 
+
   setupASScroll() {
     // https://github.com/ashthornton/asscroll
     const asscroll = new ASScroll({
@@ -268,7 +269,7 @@ export default class Controls {
         }, 'same')
 
         // Five Section
-        this.fourthMoveTimeline = new GSAP.timeline({
+        this.fifehMoveTimeline = new GSAP.timeline({
           scrollTrigger: {
               trigger: '.fifth-move',
               start: 'top top',
@@ -305,39 +306,76 @@ export default class Controls {
 
 
          // six Section
-         this.fourthMoveTimeline = new GSAP.timeline({
-          scrollTrigger: {
-              trigger: '.six-move',
-              start: 'top center',
-              end: 'center center',
-              scrub: 0.6,
-              invalidateOnRefresh: true,
-              onUpdate: function () {
-                $("#demo3").addClass("active");
-                $("#demo3").siblings().removeClass('active');
-                // $(".experience-canvas").hide();
+        
               
-                }
+        
+        // gsap.registerPlugin(ScrollTrigger);
+
+        this.sixMoveTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: ".layer-story-pinned-content",
+            scrub: true,
+            pin: true,
+            start: "top 30",
+            end: '3000px',
+            //endTrigger: '.layer-story-pinned-content',
+            markers: true,
+            onUpdate: function () {
+              // $('#main').find('.layer-story-content-wrapper:first').addClass("lineartimage");
+              document.getElementById('auto-clean').play();
+              document.getElementById('inner').play();
+
+              }
           }
         })
-        .to('.fifth-section', { opacity: 1, duration: 0.5 })
-        // .to('.fifth-section', { opacity: 1, duration: 0.1 }
-        //     )
-        .to(this.actualBike.rotation, {
-          y: -3.1,
-        }, 'same')
-        .to(this.camera.perspectiveCamera.position, {
-          x: -10,
-          y: 1.6,
-          z: 0.01,
-        }, 'same')
-        .to(this.zoom, {
-          zoomValue: 4.3,
-          onUpdate: () => {
-            this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
-            this.camera.perspectiveCamera.updateProjectionMatrix()
+        // .to($('#main').find('.layer-story-content-wrapper:first'), { opacity: 1, duration: 0.5 })
+        // .to('.lineartimage', { opacity: 1, duration: 0.5 })
+
+        .from(
+          $('#main').find('.layer-story-content-wrapper:first'),
+          { y: 20, autoAlpha: 0, stagger: 0.5 },
+          0
+        ).to(
+          $('#main').find('.layer-story-content-wrapper:first'),
+          {
+            y: 0,
+            autoAlpha: 1,
+            stagger: 0.5
           },
-        }, 'same')
+          0.4
+        )
+        .from(
+          $('#main').find('.layer-story-content-wrapper:not(:first-child)'),
+          { y: 20, autoAlpha: 0, stagger: 0.5 },
+          0
+        ).to(
+          $('#main').find('.layer-story-content-wrapper:not(:first-child)'),
+          {
+            y: 0,
+            autoAlpha: 0,
+            stagger: 0.5
+          },
+          0.4
+        )
+
+
+        // .from(
+        //   "#image",
+        //   { y: 20, autoAlpha: 0, stagger: 0.5 },
+        //   0
+        // ).to(
+        //   "#image",
+        //   {
+        //     y: 0,
+        //     autoAlpha: 1,
+        //     stagger: 0.5
+        //   },
+        //   0.4
+        // )
+
+     
+
+
 
 
         // // Fifth Section
@@ -441,6 +479,8 @@ export default class Controls {
 
     });
   }
+
+  
 
   resize() {}
 
