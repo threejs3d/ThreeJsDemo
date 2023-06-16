@@ -320,12 +320,6 @@ export default class Controls {
             end: '3000px',
             //endTrigger: '.layer-story-pinned-content',
             markers: true,
-            onUpdate: function () {
-              // $('#main').find('.layer-story-content-wrapper:first').addClass("lineartimage");
-              document.getElementById('auto-clean').play();
-              document.getElementById('inner').play();
-
-              }
           }
         })
         // .to($('#main').find('.layer-story-content-wrapper:first'), { opacity: 1, duration: 0.5 })
@@ -357,63 +351,6 @@ export default class Controls {
           },
           0.4
         )
-
-
-        // .from(
-        //   "#image",
-        //   { y: 20, autoAlpha: 0, stagger: 0.5 },
-        //   0
-        // ).to(
-        //   "#image",
-        //   {
-        //     y: 0,
-        //     autoAlpha: 1,
-        //     stagger: 0.5
-        //   },
-        //   0.4
-        // )
-
-     
-
-
-
-
-        // // Fifth Section
-        // this.fifthMoveTimeline = new GSAP.timeline({
-        //   scrollTrigger: {
-        //       trigger: '.fifth-move',
-        //       start: 'top top',
-        //       end: 'bottom bottom',
-        //       scrub: 0.6,
-        //       invalidateOnRefresh: true
-        //   }
-        // })
-        // .to(this.actualBike.rotation, {
-        //   y: -3.1,
-        // }, 'same')
-        // // .to(this.camera.perspectiveCamera.position, {
-        // //   x: () => {
-        // //     if(this.sizes.width > 1300  && this.sizes.height < 1000) {
-        // //       return 2.2
-        // //     } else {
-        // //       return 2
-        // //     }
-        // //   },
-        // //   y: 1,
-        // //   z: 4,
-        // // }, 'same')
-        // // .to(this.camera.perspectiveCamera.rotation, {
-        // //   x: -0.02845135092188762,
-        // //   y: 0.29416856071633857,
-        // //   z: 0.008251344278639
-        // // }, 'same')
-        // .to(this.zoom, {
-        //   zoomValue: 4,
-        //   onUpdate: () => {
-        //     this.camera.perspectiveCamera.zoom = this.zoom.zoomValue
-        //     this.camera.perspectiveCamera.updateProjectionMatrix()
-        //   },
-        // }, 'same')
       },
 
       // all
