@@ -311,46 +311,71 @@ export default class Controls {
         
         // gsap.registerPlugin(ScrollTrigger);
 
-        this.sixMoveTimeline = new GSAP.timeline({
-          scrollTrigger: {
-            trigger: ".layer-story-pinned-content",
-            scrub: true,
-            pin: true,
-            start: "top 30",
-            end: '3000px',
-            //endTrigger: '.layer-story-pinned-content',
-            markers: true,
-          }
-        })
-        // .to($('#main').find('.layer-story-content-wrapper:first'), { opacity: 1, duration: 0.5 })
-        // .to('.lineartimage', { opacity: 1, duration: 0.5 })
+      
 
-        .from(
-          $('#main').find('.layer-story-content-wrapper:first'),
-          { y: 20, autoAlpha: 0, stagger: 0.5 },
-          0
-        ).to(
-          $('#main').find('.layer-story-content-wrapper:first'),
-          {
-            y: 0,
-            autoAlpha: 1,
-            stagger: 0.5
+        function setScrollText(){
+        
+          GSAP.to('#heading1', {
+            scrollTrigger: {
+              trigger: '#heading1',
+              toggleActions: 'play reverse play reverse',
+              start: '+=500s',
+              end: '+=1000s',
+            },
+            opacity: 1,
+          });
+        
+          GSAP.to('#heading2', {
+            scrollTrigger: {
+              trigger: '#heading2',
+              toggleActions: 'play reverse play reverse',
+              start: '+=2000s',
+              end: '+=1000s',
+            },
+            opacity: 1,
+          });
+        
+          GSAP.to('#heading3', {
+            scrollTrigger: {
+              trigger: '#heading3',
+              toggleActions: 'play reverse play reverse',
+              start: '+=3000s',
+              end: '+=1000s',
+            },
+            opacity: 1,
+          });
+        
+        }
+        
+        function setScrollImages() {
+        
+          GSAP.to('#img1', {
+            scrollTrigger: {
+              trigger: '#img1',
+              toggleActions: 'play reverse play reverse',
+              start: '0s',
+              end: '+=6000s',
+         
+            },
+             duration: 0.2,
+           opacity: 1, 
+           
+          })
+        
+        
+        }
+        
+        GSAP.to('.head', {
+          scrollTrigger: {
+            pin: '.head',
+            end: '+=6000s',
+            pinSpacing: true,
           },
-          0.4
-        )
-        .from(
-          $('#main').find('.layer-story-content-wrapper:not(:first-child)'),
-          { y: 20, autoAlpha: 0, stagger: 0.5 },
-          0
-        ).to(
-          $('#main').find('.layer-story-content-wrapper:not(:first-child)'),
-          {
-            y: 0,
-            autoAlpha: 0,
-            stagger: 0.5
-          },
-          0.4
-        )
+        });
+        
+        setScrollImages();
+        setScrollText();
+        
       },
 
       // all
