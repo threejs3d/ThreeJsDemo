@@ -816,7 +816,7 @@ ul{
     display: flex;
     max-width: 300px;
     position: absolute;
-    transform: translate(90%,200%);
+    transform: translate(100%,200%);
   }
   .info-dots-2{
     display: flex;
