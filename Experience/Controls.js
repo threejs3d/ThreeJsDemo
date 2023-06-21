@@ -319,7 +319,7 @@ export default class Controls {
             scrollTrigger: {
               trigger: '#heading1',
               toggleActions: 'play reverse play reverse',
-              start: '+=500s',
+              start: '+=1000s',
               end: '+=1000s',
             },
             opacity: 1,

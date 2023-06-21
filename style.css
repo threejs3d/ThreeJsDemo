@@ -786,15 +786,15 @@ ul{
   left: 50%;
   transform: translate(-50%,-50%);
 }
-#heading1{
+#auto-clean{
   position: absolute;
-  transform: translate(85%,190%);
+  transform: translate(85%,180%);
 }
-#heading2{
+#inner{
   position: absolute;
   transform: translate(108%,190%);
 }
-#heading3{
+#uvWaves{
   position: absolute;
   transform: translate(102%,190%);
 }
@@ -811,6 +811,36 @@ ul{
   .active {
     opacity: 1;
   
+  }
+  .info-dots-1{
+    display: flex;
+    max-width: 300px;
+    position: absolute;
+    transform: translate(90%,200%);
+  }
+  .info-dots-2{
+    display: flex;
+    max-width: 300px;
+    position: absolute;
+    transform: translate(200%,200%); 
+  }
+  .info-dots-3{
+    display: flex;
+    max-width: 300px;
+    position: absolute;
+    transform: translate(300%,200%); 
+  }
+  #bubbles{
+    background-color: #fff;
+    padding:10px
+  }
+  #right-arrow{
+text-align: center;
+padding: 10px;
+  }
+  #text{
+    color:#fff;
+    padding-top: 5px;
   }
   
   
