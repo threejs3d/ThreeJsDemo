@@ -362,6 +362,25 @@ export default class Controls {
             },
             opacity: 1,
           });
+          GSAP.to('#heading6', {
+            scrollTrigger: {
+              trigger: '#heading6',
+              toggleActions: 'play reverse play reverse',
+              start: '+=7000s',
+              end: '+=1000s',
+            },
+            opacity: 1,
+          });
+
+          GSAP.to('#heading7', {
+            scrollTrigger: {
+              trigger: '#heading7',
+              toggleActions: 'play reverse play reverse',
+              start: '+=8000s',
+              end: '+=1000s',
+            },
+            opacity: 1,
+          });
         
         }
         
@@ -385,7 +404,7 @@ export default class Controls {
               trigger: '#img2',
               toggleActions: 'play reverse play reverse',
               start: '+=4000s',
-              end: '+=7000s',
+              end: '+=9000s',
          
             },
           
@@ -399,7 +418,7 @@ export default class Controls {
         GSAP.to('.head', {
           scrollTrigger: {
             pin: '.head',
-            end: '+=7000s',
+            end: '+=9000s',
             pinSpacing: true,
           },
         });
